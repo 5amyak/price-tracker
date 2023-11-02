@@ -1,7 +1,8 @@
 from http.server import BaseHTTPRequestHandler
 
-# import requests
-# import traceback
+import requests
+import traceback
+import json
 # from bs4 import BeautifulSoup
 
 PRODUCT_ID = 'B0B6NRZFVD';
