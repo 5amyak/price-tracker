@@ -11,10 +11,10 @@ class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         soup = fetch_html_from_amz_url(PRODUCT_ID)
+
+        print(f'HTML CONTENT :: {soup.get_text()}')
     
         price_element = soup.find(class_='twister-plus-buying-options-price-data')
-        print(price_element)
-
         buybox_json = json.loads(price_element.get_text())
         buybox_price_json = buybox_json['desktop_buybox_group_1'][0]
         print(buybox_price_json['priceAmount'])
